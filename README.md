@@ -2,15 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
 
+##Package Manager
+`yarn`
+
 ## Development server
 To run the application locally for development, follow these steps:
 
 Make sure you have Angular CLI installed globally. If not, you can install it by running the following command:
-`npm install -g @angular/cli`
+`yarn global add @angular/cli@14.2.10`
 
 Open a terminal or command prompt and navigate to the project's directory.
 
-Run the following command to start the development server:
+Run the following command to install all the dependencies `yarn install`
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
