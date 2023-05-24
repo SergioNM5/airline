@@ -2,14 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
 
-##Package Manager
-`yarn`
+## Package Manager
+
+Guide to install yarn https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable
 
 ## Development server
 To run the application locally for development, follow these steps:
 
 Make sure you have Angular CLI installed globally. If not, you can install it by running the following command:
-`yarn global add @angular/cli@14.2.10`
+`yarn global add @angular/cli`
 
 Open a terminal or command prompt and navigate to the project's directory.
 
