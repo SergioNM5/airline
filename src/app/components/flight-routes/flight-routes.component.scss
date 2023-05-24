@@ -1,0 +1,49 @@
+.routes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.route-option {
+  flex: 0 0 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow:  20px 20px 60px #d9d9d9,
+  -20px -20px 60px #ffffff;
+  padding: 32px 16px;
+}
+
+.route {
+  display: flex;
+  gap: 16px;
+}
+
+.station {
+  font-weight: bold;
+}
+
+.flight-details {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.arrow {
+  margin: 0 5px;
+}
+
+.flight-data {
+  margin-top: 5px;
+  margin-left: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.carrier, .number, .price {
+  display: block;
+}

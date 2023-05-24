@@ -1,0 +1,23 @@
+<div *ngIf="routes.length > 0">
+  <p class="mb-4 mt-4">{{ title }}</p>
+  <div class="routes-container">
+    <div class="route-option" *ngFor="let route of routes">
+      <div class="flight-info">
+        <ng-container *ngFor="let station of route; let i = index">
+          <ng-container *ngIf="i + 1 < route.length">
+            <div class="flight-details">
+              <span class="station">{{ station }}</span>
+              <span class="arrow">➔</span>
+              <span class="station">{{ route[i + 1] }}</span>
+              <div class="flight-data">
+                <span class="carrier">Carrier: {{ getFlightByStations(route[i], route[i + 1])?.flightCarrier }}</span>
+                <span class="number">Flight Number: {{ getFlightByStations(route[i], route[i + 1])?.flightNumber }}</span>
+                <span class="price">Price: {{ getFlightByStations(route[i], route[i + 1])?.price | currency: selectedCurrency }}</span>
+              </div>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
