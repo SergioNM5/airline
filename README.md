@@ -1,10 +1,13 @@
 # Airline
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
-
 ## Package Manager
 
 Guide to install yarn https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable
+
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
+
+
 
 ## Development server
 To run the application locally for development, follow these steps:
