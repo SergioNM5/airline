@@ -24,7 +24,7 @@ Run the following command to install all the dependencies `yarn install`
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Examples of origin and destinations
-MZL, MDE, BOG, CTG, PEI, BCN, CAN, MEX
+MZL, MDE, BOG, CTG, PEI, BCN, CAN, MEX, MAD
 
 ## Running unit tests
 
