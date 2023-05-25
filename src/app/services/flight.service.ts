@@ -17,23 +17,36 @@ export class FlightService {
   }
 
   buildRoute(flights: Flight[], origin: string, destination: string, selectedCurrency: string, stopoverLimit: number): string[][] {
-    const routes = this.findRoutes(flights, origin, destination, []);
+    const routes = this.findRoutes(flights, origin, destination);
     return routes.length > 0 ? this.filteredRoutes(routes, stopoverLimit) : [];
   }
 
-  findRoutes(flights: Flight[], origin: string, destination: string, visited: string[]): string[][] {
-    visited.push(origin);
-    if (origin === destination) {
-      return [visited];
-    }
+  findRoutes(flights: Flight[], origin: string, destination: string): string[][] {
+    const stack: { station: string; visited: string[] }[] = [];
+    const routes: string[][] = [];
 
-    const nextFlights = flights.filter(flight => flight.departureStation === origin && !visited.includes(flight.arrivalStation));
+    stack.push({ station: origin, visited: [origin] });
 
-    let routes: string[][] = [];
-    for (const flight of nextFlights) {
-      const newVisited = [...visited];
-      const newRoutes = this.findRoutes(flights, flight.arrivalStation, destination, newVisited);
-      routes = routes.concat(newRoutes);
+    while (stack.length > 0) {
+      const current = stack.pop()!;
+      const currentStation = current.station;
+      const visited = current.visited;
+
+      if (currentStation === destination) {
+        routes.push(visited);
+        continue;
+      }
+
+      const nextFlights = flights.filter(
+        flight =>
+          flight.departureStation === currentStation &&
+          !visited.includes(flight.arrivalStation)
+      );
+
+      for (const flight of nextFlights) {
+        const newVisited = [...visited, flight.arrivalStation];
+        stack.push({ station: flight.arrivalStation, visited: newVisited });
+      }
     }
 
     return routes;

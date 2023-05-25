@@ -188,11 +188,9 @@ describe('RouteFormComponent', () => {
     spyOn(flightService, 'updateFlightPrices').and.returnValue(flights);
     spyOn(component, 'findRoutes');
 
-    // Set form values
     component.routeForm.controls['origin'].setValue('MZL');
     component.routeForm.controls['destination'].setValue('CTG');
 
-    // Submit the form
     component.onSubmit();
 
     expect(flightService.getFlights).toHaveBeenCalled();
@@ -204,10 +202,8 @@ describe('RouteFormComponent', () => {
   it('should update routes on stopovers change', () => {
     spyOn(component, 'findRoutes');
 
-    // Set form value
     component.routeForm.controls['selectStopovers'].setValue(1);
 
-    // Trigger stopovers change
     component.onStopoversChange();
 
     expect(component.selectedStopover).toBe(1);

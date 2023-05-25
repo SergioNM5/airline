@@ -38,7 +38,6 @@ describe('FlightService', () => {
           flightNumber: '8001',
           price: 200,
         },
-        // Add more mock flights as needed
       ];
 
       service.getFlights().subscribe((flights: Flight[]) => {
@@ -62,7 +61,6 @@ describe('FlightService', () => {
           flightNumber: '8001',
           price: 200,
         },
-        // Add more mock flights as needed
       ];
 
       const origin = 'MZL';
@@ -74,7 +72,7 @@ describe('FlightService', () => {
 
       const routes = service.buildRoute(mockFlights, origin, destination, selectedCurrency, stopoverLimit);
 
-      expect(service.findRoutes).toHaveBeenCalledWith(mockFlights, origin, destination, []);
+      expect(service.findRoutes).toHaveBeenCalledWith(mockFlights, origin, destination);
       expect(routes).toEqual([['MZL', 'MDE']]);
     });
   });
@@ -89,14 +87,12 @@ describe('FlightService', () => {
           flightNumber: '8001',
           price: 200,
         },
-        // Add more mock flights as needed
       ];
 
       const origin = 'MZL';
       const destination = 'MDE';
-      const visited: string[] = [];
 
-      const routes = service.findRoutes(mockFlights, origin, destination, visited);
+      const routes = service.findRoutes(mockFlights, origin, destination);
 
       expect(routes).toEqual([['MZL', 'MDE']]);
     });
