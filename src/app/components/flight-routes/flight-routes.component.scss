@@ -5,7 +5,7 @@
 }
 
 .route-option {
-  flex: 0 0 48%;
+  flex: 0 0 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,4 +46,11 @@
 
 .carrier, .number, .price {
   display: block;
+}
+
+
+@media (min-width: 668px) {
+  .route-option {
+    flex: 0 0 48%;
+  }
 }
